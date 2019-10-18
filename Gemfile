@@ -23,8 +23,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Custom Gem here
 gem 'devise'
-gem 'slim'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
+gem "slim-rails"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -34,6 +38,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "letter_opener"
+  gem 'annotate'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'letter_opener_web'
 end
 
 group :development do

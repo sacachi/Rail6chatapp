@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title
+      | App
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body.hold-transition.sidebar-mini.layout-fixed
+    .wrapper
+      = render partial: 'admin/common/navbar'
+      = render partial: 'admin/common/left_sidebar'
+      .content-wrapper
+        = render partial: 'admin/common/header'
+        section.content
+          .container-fluid
+            = yield
+      = render partial: 'admin/common/user_sidebar'
+      footer.main-footer
+        = render partial: 'admin/common/footer'

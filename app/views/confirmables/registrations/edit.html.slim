@@ -3,10 +3,10 @@ h2
   = resource_name.to_s.humanize
   = render "devise/shared/error_messages", resource: resource
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal', method: :put }) do |f|
-  .form-group.row
-    = f.label :email, class: 'col-sm-2 col-form-label', for: 'email'
-    .col-sm-10
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'email'
+  .form-group
+    .row
+      = f.label :email, class: 'col-sm-2 col-form-label', for: 'email'
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control col-sm-10', id: 'email'
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       = resource.unconfirmed_email

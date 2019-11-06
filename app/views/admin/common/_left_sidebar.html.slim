@@ -8,6 +8,7 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
         img.img-circle.elevation-2 alt=("User Image") src="/dist/img/user2-160x160.jpg" /
       .info
         = link_to current_user.name, edit_user_registration_path, class: 'd-block'
+        = link_to 'Log out', destroy_user_session_path, class: 'd-block'
     nav.mt-2
       ul.nav.nav-pills.nav-sidebar.flex-column data-accordion="false" data-widget="treeview" role="menu"
         li.nav-item.has-treeview.menu-open

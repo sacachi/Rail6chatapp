@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
   # GET /users/:id.:format
   def show
     # authorize! :read, @user
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(user_params)
         @user.skip_reconfirmation!
         sign_in(@user, :bypass => true)
-        redirect_to @user, notice: 'Your profile was successfully updated.'
+        redirect_to edit_user_registration_path, notice: 'Your profile was successfully updated.'
       else
         @show_errors = true
       end
